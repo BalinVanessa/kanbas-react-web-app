@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table width="100%">
+        <tr>
+            <td valign="top">
+                <ul>
+                    <li>
+                        <a href="../profile/index.html">Account</a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="../courses.html">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">Calendar</a>
+                    </li>
+                    <li>
+                        <a href="#">Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#">History</a>
+                    </li>
+                    <li>
+                        <a href="#">Studio</a>
+                    </li>
+                    <li>
+                        <a href="#">Commons</a>
+                    </li>
+                    <li>
+                        <a href="#">Help</a>
+                    </li>
+                </ul>
+            </td>
+
+            <td valign="top">
+                <ul>
+                    <li>
+                        <a href="../coursehome.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Modules</a>
+                    </li>
+                    <li>
+                        <a href="https://www.piazza.com">Piazza</a>
+                    </li>
+                    <li>
+                        <a href="#">Zoom Meetings</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Assignments</a>
+                    </li>
+                    <li>
+                        <a href="#">Quizzes</a>
+                    </li>
+                    <li>
+                        <a href="../grades.html">Grades</a>
+                    </li>
+                    <li>
+                        <a href="#">People</a>
+                    </li>
+                    <li>
+                        <a href="#">Panopto Video</a>
+                    </li>
+                    <li>
+                        <a href="#">Discussions</a>
+                    </li>
+                    <li>
+                        <a href="#">Announcements</a>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                    </li>
+                    <li>
+                        <a href="#">Files</a>
+                    </li>
+                    <li>
+                        <a href="#">Rubrics</a>
+                    </li>
+                    <li>
+                        <a href="#">Outcomes</a>
+                    </li>
+                    <li>
+                        <a href="#">Collaboration</a>
+                    </li>
+                    <li>
+                        <a href="#">Syllabus</a>
+                    </li>
+                    <li>
+                        <a href="#">Settings</a>
+                    </li>
+                </ul>
+            </td>
+
+            <td valign="top">
+                <select>
+                    <option>SpeedGrader</option>
+                    <option>SlowGrader</option>
+                    <option>ManualGrader</option>
+                </select>
+                <hr />
+                <h3>Assignment Name</h3>
+
+                <form action="index.html">
+                    <input type="text" placeholder="Assignment Name"><br /><br />
+                    <textarea>This is the assignment description.</textarea><br /><br />
+
+                    <label for="points">Points</label><br />
+                    <input id="points" type="number" placeholder="100"><br /><br />
+
+                    <label for="submissionType">Submission Type</label><br />
+                    <select id="submissionType">
+                        <option>Online</option>
+                        <option>Website URL</option>
+                        <option>Media Recordings</option>
+                        <option>Student Annotation</option>
+                        <option>File Uploads</option>
+                        <option>Restrict Upload File Types</option>
+                    </select>
+
+                    <br /><br />
+
+                    <label for="onlineEntry">Online Entry Options</label> <br />
+                    <input type="checkbox" value="TEXTENTRY" name="check-entry" id="cb-text">
+                    <label for="cb-text">Text Entry</label> <br />
+                    <input type="checkbox" value="WEBURL" name="check-entry" id="cb-weburl">
+                    <label for="cb-weburl">Website URL</label> <br />
+                    <input type="checkbox" value="MEDIAREC" name="check-entry" id="cb-media">
+                    <label for="cb-media">Media Recordings</label> <br />
+                    <input type="checkbox" value="STUDENTANNO" name="check-entry" id="cb-studanno">
+                    <label for="cb-studanno">Student Annotations</label> <br />
+                    <input type="checkbox" value="FILEUPLOAD" name="check-entry" id="cb-fileupload">
+                    <label for="cb-fileupload">File Uploads</label> <br /> <br />
+
+                    <label for="plagiarism">Plagiarism Review</label> <br />
+                    <select id="plagiarism">
+                        <option>None</option>
+                        <option>Auto</option>
+                    </select>
+
+                    <br /> <br />
+
+                    Group Assignment <br />
+                    <input type="checkbox" value="YESGROUP" name="check-group" id="cb-group">
+                    <label for="cb-group">This is a group assignment</label>
+                    <br />
+
+                    Peer Reviews <br />
+                    <input type="checkbox" value="YESPEER" name="check-peer" id="cb-peer">
+                    <label for="cb-peer">Require Peer Reviews</label>
+                    <br /> <br />
+
+                    Assign <br />
+                    <label for="assign">Assign to</label> <br />
+                    <input type="text" placeholder="Assign to" id="assign" value="Everyone">
+                    <br /> <br />
+
+                    <label for="dueDate">Due</label><br />
+                    <input type="date" id="dueDate" value="2021-01-01">
+                    <br /> <br />
+
+                    <button type="submit">Cancel</button>
+                    <button type="submit">Save</button>
+                </form>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
