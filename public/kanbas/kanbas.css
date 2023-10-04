@@ -1,0 +1,205 @@
+/* GENERAL KANBAS COMPONENTS */
+
+body {
+    font-family:"Lato", Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-family:'Lato', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+h4 {
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+.screen {
+    display: flex;
+}
+
+
+/*spacing of content right of sidebar */
+.content {
+    width: 100%;
+    margin-right: 25px;
+    padding-bottom: 50px;
+    padding-top: 5px;
+}
+
+
+/* Light Gray Kanbas Buttons */
+.btn.btn-light.kanbas {
+    border: 1px solid gray;
+}
+
+
+/* NAV BAR STUFF */
+
+.sidebar {
+    height: 100vh;
+    padding-right: 0px;
+    width: 80px;
+    padding-bottom: 0px;
+    margin-right: 25px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+}
+
+.list-group-item.navlink {
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px 5px 5px;
+}
+
+.navicon {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    color: #c8102e;
+    font-size: 25px;
+}
+
+.list-group-item.active.overridebg {
+    background-color: white;
+    border: none;
+    color: black;
+}
+
+.navtext {
+    margin-bottom: 5px;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.nulogo {
+    width: 80%;
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ACCOUNT STUFF */
+
+.page-top {
+    width:100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-width: 0px 0px 2px 0px;
+    border-color:lightgrey;
+    border-style: solid;
+    margin-bottom: 30px;
+}
+
+.page-top > h4 {
+    display: inline;
+    margin-left: 15px;
+    font-size: 20px;
+}
+
+.inline-icon {
+    color:#c8102e;
+    display: inline;
+    font-size: 25px;
+}
+
+.profile {
+    display:flex;
+    width:100%;
+}
+
+.acc-nav {
+    width: 195px;
+    margin-right: 40px;
+}
+
+.list-group-item.acc-link {
+    width:100%;
+    border: none;
+    padding-left: 10px;
+    color:#c8102e;
+    padding-bottom:0px;
+    padding-top: 0px;
+    margin-bottom: 20px;
+    border-radius: 0%;
+}
+
+.list-group-item.active.acc-link {
+    background-color: white;
+    color: black;
+    border-left: 3px solid black;
+}
+
+.profileInfo {
+    width:100%;
+}
+
+.profile-text {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.in-line-link {
+    color:#c8102e;
+}
+
+.pic {
+    margin-bottom: 5px;
+}
+
+/* EDIT PROFILE */
+.profile-form > label {
+    font-size: 25px;
+    font-weight:400;
+}
+
+.form-label.smaller{
+    font-size:16px;
+    font-weight: 500;
+}
+
+.profile-form {
+    width: 75%;
+}
+
+.profile-form > input {
+    margin-bottom: 15px;
+}
+
+.profile-form > select {
+    margin-bottom: 15px;
+}
+
+.profile-form > textarea {
+    margin-bottom: 25px;
+}
+
+
+.col-5.profile-links {
+    text-align: center;
+}
+
+.col-1.profile-links {
+    text-align: center;
+    padding-top: 35px;
+    font-size: 20px;
+}
+
+.link-section {
+    padding-bottom: 25px;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.link-section > .row > button {
+    margin-left: 12px;
+}
+
