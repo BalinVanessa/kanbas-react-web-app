@@ -13,17 +13,28 @@ h4 {
     font-family: "Lato", Arial, Helvetica, sans-serif;
 }
 
+h6 {
+    font-size: 14px;
+}
+
 .screen {
     display: flex;
+}
+
+/* Top of content page */
+.page-top {
+    width:100%;
+    padding-top: 15px;
+    padding-bottom: 5px;
 }
 
 
 /*spacing of content right of sidebar */
 .content {
     width: 100%;
-    margin-right: 25px;
     padding-bottom: 50px;
     padding-top: 5px;
+    padding-right: 10px;
 }
 
 
@@ -31,6 +42,15 @@ h4 {
 .btn.btn-light.kanbas {
     border: 1px solid gray;
 }
+
+nav {
+    --bs-breadcrumb-divider:'>';
+}
+
+.btn.btn-light p {
+    font-size: 14px;
+}
+
 
 
 /* NAV BAR STUFF */
@@ -89,19 +109,8 @@ h4 {
 
 /* ACCOUNT STUFF */
 
-.page-top {
-    width:100%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-width: 0px 0px 2px 0px;
-    border-color:lightgrey;
-    border-style: solid;
-    margin-bottom: 30px;
-}
-
 .page-top > h4 {
     display: inline;
-    margin-left: 15px;
     font-size: 20px;
 }
 
@@ -109,6 +118,7 @@ h4 {
     color:#c8102e;
     display: inline;
     font-size: 25px;
+    margin-right: 25px;
 }
 
 .profile {
@@ -136,6 +146,7 @@ h4 {
     background-color: white;
     color: black;
     border-left: 3px solid black;
+    border-radius: 0%;
 }
 
 .profileInfo {
@@ -202,4 +213,172 @@ h4 {
 .link-section > .row > button {
     margin-left: 12px;
 }
+
+/* DASHBOARD */
+
+.page-top > h3 {
+    font-weight: 400;
+}
+
+.published-courses {
+    margin-left: 20px;
+}
+
+.course {
+    width: 260px;
+    margin-right: 35px;
+    margin-bottom: 35px;
+}
+
+.card-img-top {
+    width:260px;
+    height: 150px;
+}
+
+p.card-title {
+    font-weight:600;
+    font-size: 14px;
+    color:rgb(80, 92, 173);
+    margin-bottom: 5px;
+}
+
+p.card-subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    color: gray;
+}
+
+.card-body > i {
+    font-size: 20px;
+    color: gray;
+}
+
+.published-courses a {
+    text-decoration-line: none;
+    color: gray;
+}
+
+/* Course Home */
+.breadcrumb-item > a {
+    color:#c8102e;
+    text-decoration: none;
+    display: inline;
+}
+
+.d-flex.float-end > button, .d-flex.float-end > .dropdown {
+    font-size: 14px;
+}
+
+.d-flex.float-end > .dropdown > button{
+    font-size: 15px;
+}
+
+
+.modules > hr {
+    margin-top: 50px;
+}
+
+.fa-solid.fa-grip-vertical {
+    color: gray;
+}
+
+.text-danger {
+    display: inline;
+}
+
+.modules .list-group-item {
+    border-left: 5px solid green;
+}
+
+.modules .list-group-item-secondary {
+    border:none;
+}
+
+.course-buttons > button , .course-buttons > .w-100 > button {
+    font-size: 14px;
+}
+
+.course-buttons > .d-flex > a {
+    text-decoration: none;
+}
+
+.responsive-nav {
+    color: white;
+}
+
+.responsive-nav > .row > .col-2 > a, .responsive-nav > .row > .col-1 > a, .responsive-nav > .row > a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-title.col > h6 {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+}
+
+.profile.row .col.modules {
+    padding-right: 0px;
+    padding-left: 30px;
+}
+/* Top Nav Dropdown Responsive */
+.top-nav > a {
+    border: none;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color:#c8102e;
+}
+
+.top-nav-sidebar > a > .centered{
+    flex-direction: row;
+    display: flex;
+}
+
+.top-nav-sidebar > a > .centered > p {
+    padding-top: 5px;
+    margin-left: 15px;
+    color:#c8102e;
+    font-size:14px;
+    
+}
+
+/* ASSIGNMENTS PAGE */
+
+.modules > hr#assignments {
+    margin-top: 20px;
+}
+
+.modules a {
+    text-decoration: none;
+    color: black;
+}
+
+.modules .list-group p {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+
+.modules .list-group {
+    border-radius: 0%;
+}
+
+.modules .list-group-item a {
+    font-weight: 600;
+}
+
+.modules .list-group-item-secondary p {
+    display: inline;
+    font-size: 14px;
+    border: 2px solid gray;
+}
+
+tr th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
 
