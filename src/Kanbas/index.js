@@ -17,7 +17,7 @@ function Kanbas() {
                     </div>
                     <div class="flex-row flex-nowrap d-flex col-2 text-center pt-3 justify-content-end">
                         <FaGlasses class="fa-solid fa-glasses mt-1 me-3"/>
-                        <a href="topnavoptions.html"><FaAngleDown class="fa-solid fa-angle-down"/></a>
+                        <a href="#"><FaAngleDown class="fa-solid fa-angle-down"/></a>
                     </div>
 
                 </div>
