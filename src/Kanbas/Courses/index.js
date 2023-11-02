@@ -9,9 +9,9 @@ import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
 
 
-function Courses() {
+function Courses({ courses }) {
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    const course = courses.find((course) => course._id === courseId);
     const { pathname } = useLocation();
     return (
         <div>
@@ -21,7 +21,7 @@ function Courses() {
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item kanbas"><a href="#">{course.name}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{pathname.substring(22)}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{pathname.substring(17 + course._id.length)}</li>
                         </ol>
                     </nav>
                 </div>
@@ -34,14 +34,14 @@ function Courses() {
                 </div>
                 <Routes>
                     <Route path="/" element={<Navigate to="Home" />} />
-                    <Route path="Home" element={<Home/>} />
-                    <Route path="Modules" element={<Modules/>} />
-                    <Route path="Assignments" element={<Assignments/>} />
+                    <Route path="Home" element={<Home />} />
+                    <Route path="Modules" element={<Modules />} />
+                    <Route path="Assignments" element={<Assignments />} />
                     <Route
                         path="Assignments/:assignmentId"
-                        element={<AssignmentEditor/>}
+                        element={<AssignmentEditor />}
                     />
-                    <Route path="Grades" element={<Grades/>} />
+                    <Route path="Grades" element={<Grades />} />
                 </Routes>
             </div>
         </div>

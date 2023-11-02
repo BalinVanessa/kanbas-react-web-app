@@ -258,7 +258,7 @@ p.card-subtitle {
     color: gray;
 }
 
-.card-body>.card-icon {
+.card-body .card-icon {
     font-size: 25px;
     color: gray;
 }
@@ -382,6 +382,11 @@ p.card-subtitle {
     color: black;
 }
 
+.modules p {
+    font-size: 15px;
+    margin-top: 13px;
+}
+
 .modules .list-group p {
     padding-bottom: 0px;
     margin-bottom: 0px;
@@ -396,7 +401,7 @@ p.card-subtitle {
     font-weight: 600;
 }
 
-.modules .list-group-item-secondary p {
+.modules .list-group-item-secondary>.p {
     display: inline;
     font-size: 14px;
     border: 2px solid gray;

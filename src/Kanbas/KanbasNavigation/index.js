@@ -10,7 +10,7 @@ function KanbasNavigation() {
     const { pathname } = useLocation();
     return (
         <div class="sidebar text-white bg-dark d-none d-md-block">
-            <img class="nulogo" src="../images/NU_RGB_Notched-N_motto_RW.png"></img>
+            <img class="nulogo" src="images/NU_RGB_Notched-N_motto_RW.png"></img>
             <div className="list-group fullwidth">
                 {links.map((link, index) => {
                     const Icon = icons[index];
