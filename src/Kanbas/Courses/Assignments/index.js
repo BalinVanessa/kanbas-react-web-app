@@ -1,4 +1,11 @@
-import React from "react";
+import { React, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+    addAssignment,
+    deleteAssignment,
+    updateAssignment,
+    setAssignment,
+} from "./assignmentsReducer";
 import { Link, useParams } from "react-router-dom";
 import db from "../../Database";
 import { FaEllipsisVertical, FaGripVertical, FaPlus, FaFilePen, FaCircleCheck } from "react-icons/fa6";
@@ -6,9 +13,12 @@ import { FaEllipsisVertical, FaGripVertical, FaPlus, FaFilePen, FaCircleCheck } 
 
 function Assignments() {
     const { courseId } = useParams();
-    const assignments = db.assignments;
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments)
+    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+    const dispatch = useDispatch();
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId);
+
     return (
         <div class="col modules">
             <div class="d-flex ">
@@ -25,13 +35,15 @@ function Assignments() {
             </div>
             <hr id="assignments" />
             <div className="list-group mt-5">
-                <li class="list-group-item list-group-item-secondary pt-3 pb-3">
-                    <FaGripVertical class="fa-solid fa-grip-vertical me-1 mb-1" />
-                    Assignments for {courseId}
-                    <div class="d-flex flex-row float-end">
-                        <p class="rounded ps-2 pe-2 me-3">40% of Total</p>
-                        <FaPlus class="fa-solid fa-plus me-2 mt-1" />
-                        <FaEllipsisVertical size={20} class="fa-solid fa-ellipsis-vertical pt-1" />
+                <li class="list-group-item list-group-item-secondary pt-3 pb-3 d-flex">
+                    <FaGripVertical class="fa-solid fa-grip-vertical me-1 mt-2" />
+                    <p className="mt-2">Assignments for {courseId}</p>
+                    <div class="d-flex flex-row ms-auto">
+                        <p class="rounded mt-2 pe-2 me-3">40% of Total</p>
+                        <Link to={`/Kanbas/Courses/${courseId}/Assignments/Create`}><button
+                            className="btn">
+                            <FaPlus class="fa-solid fa-plus mb-1" /></button></Link>
+                        <FaEllipsisVertical size={20} class="fa-solid fa-ellipsis-vertical mt-2" />
                     </div>
 
                 </li>
@@ -40,8 +52,8 @@ function Assignments() {
                         key={assignment._id}
                         to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                         className="list-group-item d-inline-flex">
-                        <FaGripVertical size={16} class="me-2 mt-3"/>
-                        <FaFilePen size={16} class="me-3 mt-3 text-success"/>
+                        <FaGripVertical size={16} class="me-2 mt-3" />
+                        <FaFilePen size={16} class="me-3 mt-3 text-success" />
                         <div class="assignment-details d-flex flex-column">
                             <a href="edit.html">{assignment.title}</a>
                             <p>Week 0</p>

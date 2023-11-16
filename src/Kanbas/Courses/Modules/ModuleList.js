@@ -1,6 +1,5 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import db from "../../Database";
 import { FaPlus, FaGripVertical, FaCircleCheck, FaEllipsisVertical, FaTrash, FaPen } from "react-icons/fa6";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -8,10 +7,39 @@ import {
     deleteModule,
     updateModule,
     setModule,
+    setModules,
 } from "./modulesReducer";
+import { findModulesForCourse, createModule } from "./client";
+import * as client from "./client";
 
 function ModuleList() {
     const { courseId } = useParams();
+    useEffect(() => {
+        findModulesForCourse(courseId)
+            .then((modules) =>
+                dispatch(setModules(modules))
+            );
+    }, [courseId]);
+
+    const handleUpdateModule = async () => {
+        const status = await client.updateModule(module);
+        dispatch(updateModule(module));
+    };
+
+
+    const handleDeleteModule = (moduleId) => {
+        client.deleteModule(moduleId).then((status) => {
+            dispatch(deleteModule(moduleId));
+        });
+    };
+
+    const handleAddModule = () => {
+        createModule(courseId, module).then((module) => {
+            dispatch(addModule(module));
+        });
+    };
+
+
     const modules = useSelector((state) => state.modulesReducer.modules);
     const module = useSelector((state) => state.modulesReducer.module);
     const dispatch = useDispatch();
@@ -57,11 +85,11 @@ function ModuleList() {
                 />
                 <div className="d-flex">
                     <button className="btn btn-danger ms-auto me-2"
-                        onClick={() => dispatch(addModule({ ...module, course: courseId }))}>
+                        onClick={handleAddModule}>
                         Add
                     </button>
                     <button className="btn btn-light kanbas"
-                        onClick={() => dispatch(updateModule(module))}>
+                        onClick={handleUpdateModule}>
                         Update
                     </button>
                 </div>
@@ -78,11 +106,11 @@ function ModuleList() {
                             <ul className="list-group mt-5">
                                 <li key={index} className="list-group-item list-group-item-secondary pt-3 pb-4 d-flex">
                                     <FaGripVertical className="me-2 mb-1 mt-3" />
-                                    <p>{module.name} - {module.description}</p>
+                                    <p className="mt-2">{module.name} - {module.description}</p>
                                     <div class="d-flex flex-row ms-auto">
                                         <button
                                             className="btn"
-                                            onClick={() => dispatch(deleteModule(module._id))}>
+                                            onClick={() => handleDeleteModule(module._id)}>
                                             <FaTrash size={15} className="text-danger" />
                                         </button>
                                         <button

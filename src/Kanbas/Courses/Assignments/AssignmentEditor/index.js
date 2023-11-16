@@ -1,26 +1,36 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import db from "../../../Database";
+import { useSelector, useDispatch } from "react-redux";
+import { addAssignment, deleteAssignment, updateAssignment, setAssignment} from "../assignmentsReducer";
 
 
 function AssignmentEditor() {
     const { assignmentId } = useParams();
-    const assignment = db.assignments.find(
-        (assignment) => assignment._id === assignmentId);
-
+    const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
+    const dispatch = useDispatch();
 
     const { courseId } = useParams();
     const navigate = useNavigate();
     const handleSave = () => {
-        console.log("Actually saving assignment TBD in later assignments");
+        if(assignmentId === "Create") {
+            dispatch(addAssignment({...assignment, course: courseId}));
+        } else {
+            dispatch(updateAssignment(assignment));
+        }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
+
+    
     return (
         <div class="col modules">
             <label for="assignment-name" class="form-label">Assignment Name</label>
             <input value={assignment.title}
                 className="form-control mb-2"
-                id="assignment-name" />
+                id="assignment-name"
+                onChange = {(e) =>
+                    dispatch(setAssignment({ ...assignment, title: e.target.value }))}/>
             <hr />
             <div class="d-flex">
                 <div class="form-check">

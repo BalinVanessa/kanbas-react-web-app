@@ -7,11 +7,24 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 import Grades from "./Grades";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 
-function Courses({ courses }) {
+function Courses() {
+    const URL = "http://localhost:4000/api/courses";
     const { courseId } = useParams();
-    const course = courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+
     const { pathname } = useLocation();
     return (
         <div>
@@ -21,7 +34,7 @@ function Courses({ courses }) {
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item kanbas"><a href="#">{course.name}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{pathname.substring(17 + course._id.length)}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{course._id}</li>
                         </ol>
                     </nav>
                 </div>
